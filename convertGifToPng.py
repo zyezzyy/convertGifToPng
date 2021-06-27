@@ -32,7 +32,7 @@ def select_output_folder():
         output_textbox.insert(0, folder_path)
 
 
-def parseGIF():
+def convertGIF():
     gif_file_path = input_textbox.get()
     output_folder_path = output_textbox.get()
 
@@ -79,7 +79,7 @@ output_label = tkinter.Label(root, text=constString.get_item("item005"))
 output_textbox = tkinter.Entry(root)
 output_button = tkinter.Button(root, text=constString.get_item("item004"), command=select_output_folder)
 
-parse_button = tkinter.Button(root, text=constString.get_item("item006"), command=parseGIF)
+parse_button = tkinter.Button(root, text=constString.get_item("item006"), command=convertGIF)
 
 language_label.grid(row=0, column=0)
 language_label_list.grid(row=0, column=1)
