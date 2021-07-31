@@ -63,13 +63,22 @@ def mkdir(folder_path):
     else:
         os.makedirs(folder_path)
 
+def change_label_text(parm):
+    print(parm)
+    constString.default_language = language_choice.get()
+    language_label.config(text=constString.get_item("item002"))
+    input_label.config(text=constString.get_item("item003"))
+    output_label.config(text=constString.get_item("item005"))
+    output_button.config(text=constString.get_item("item004"))
+    input_button.config(text=constString.get_item("item004"))
+    parse_button.config(text=constString.get_item("item006"))
 
 language_choice = StringVar()
 language_choice.set(constString.default_language)
 language_list = constString.get_language_list()
 
 language_label = tkinter.Label(root, text=constString.get_item("item002"))
-language_label_list = tkinter.OptionMenu(root, language_choice, *language_list)
+language_label_list = tkinter.OptionMenu(root, language_choice, *language_list,command=change_label_text)
 
 input_label = tkinter.Label(root, text=constString.get_item("item003"))
 input_textbox = tkinter.Entry(root)
